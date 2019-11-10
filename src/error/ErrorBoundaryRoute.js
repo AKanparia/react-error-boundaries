@@ -11,7 +11,7 @@ const ErrorBoundaryRoute = props => {
 
   const encloseInErrorBoundary = routerProps => (
     <ErrorBoundary {...(errorBoundaryFor ? { key: errorBoundaryFor } : {})}>
-      {children ? children : <Component {...routerProps} />}
+      {Component ? <Component {...routerProps} /> : children}
     </ErrorBoundary>
     /* Error within child will be caught if child is a component, else will be propogated up to nearest parent Errorboundary  */
   );
